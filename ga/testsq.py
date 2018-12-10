@@ -5,7 +5,7 @@ from approxsq import approxsq
 
 def testsq(pars):
 
-	data = genfromtxt("values.csv", delimiter=',')
+data = genfromtxt("data.csv", delimiter=';')	#data = genfromtxt("data.csv", delimiter=',') CHANGED
 	ret=np.zeros(len(data))
 
 	for idx, val in enumerate(data):

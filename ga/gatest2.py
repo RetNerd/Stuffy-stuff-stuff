@@ -3,7 +3,7 @@ import GA2
 from testsq import testsq
 
 # Number of the weights we are looking to optimize.
-num_weights = 3
+num_weights = 1
 
 sol_per_pop = 20
 num_parents_mating = 2
@@ -26,11 +26,11 @@ for generation in range(num_generations):
 	# Generating next generation using crossover.
 	offspring_crossover = GA2.crossover(parents, offspring_size=(pop_size[0]-parents.shape[0], num_weights))
 	#print(offspring_crossover)
-	
+
 	# Adding some variations to the offsrping using mutation.
 	offspring_mutation = GA2.mutation(offspring_crossover)
 	#print(offspring_mutation)
-	
+
 	# Creating the new population based on the parents and offspring.
 	new_population[0:parents.shape[0], :] = parents
 	new_population[parents.shape[0]:, :] = offspring_mutation

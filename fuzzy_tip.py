@@ -14,14 +14,14 @@ from mpl_toolkits.mplot3d import Axes3D  # Required for 3D plotting
 
 # New Antecedent/Consequent objects hold universe variables and membership
 # functions
-quality = ctrl.Antecedent(np.arange(6, 17, 0.1), 'quality') #quality = ctrl.Antecedent(np.arange(0, 10, 0.1), 'quality')
-service = ctrl.Antecedent(np.arange(8, 18, 0.1), 'service') #service = ctrl.Antecedent(np.arange(0, 10, 0.1), 'service')
-tip = ctrl.Consequent(np.arange(-5, 26, 0.1), 'tip')  #tip = ctrl.Consequent(np.arange(0, 25, 0.1), 'tip')
+quality = ctrl.Antecedent(np.arange(6, 17, 0.1), 'quality') #quality = ctrl.Antecedent(np.arange(0, 10, 0.1), 'quality') CHANGED
+service = ctrl.Antecedent(np.arange(8, 18, 0.1), 'service') #service = ctrl.Antecedent(np.arange(0, 10, 0.1), 'service') CHANGED
+tip = ctrl.Consequent(np.arange(-5, 26, 0.1), 'tip')  #tip = ctrl.Consequent(np.arange(0, 25, 0.1), 'tip') CHANGED
 
 
-quality['poor'] = fuzz.zmf(quality.universe, 0,5)
-quality['average'] = fuzz.gaussmf(quality.universe,5,1)
-quality['good'] = fuzz.smf(quality.universe,5,10)
+quality['poor'] = fuzz.zmf(quality.universe, 6,17) #quality['poor'] = fuzz.zmf(quality.universe, 0,5) CHANGED
+#quality['average'] = fuzz.gaussmf(quality.universe,5,1) CHANGED
+quality['good'] = fuzz.smf(quality.universe,8,18) #quality['good'] = fuzz.smf(quality.universe,5,10) CHANGED
 
 service['poor'] = fuzz.zmf(service.universe, 0,5)
 service['average'] = fuzz.gaussmf(service.universe,5,1)

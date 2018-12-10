@@ -1,0 +1,5 @@
+The parameters for the tasks are the following:
+Fuzzy: Minőség min : 6,0; Minőség max:17,0; Várakozási idő min:8,0; Várakozási idő max:18,0
+Borravaló min:0,0; Borravaló max:23,0
+Genetic algorithm: found in data.csv
+Neural network logical function: (A NAND B) OR (C OR D)

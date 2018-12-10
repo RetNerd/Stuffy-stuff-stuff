@@ -36,24 +36,24 @@ To help understand what the membership looks like, use the ``view`` methods.
 """
 
 # You can see how these look with .view()
-plt.ion()
-quality['average'].view()
-plt.title('Quality')
-plt.ioff()
+#plt.ion()
+#quality['average'].view()
+#plt.title('Quality')
+#plt.ioff()
 """
 .. image:: PLOT2RST.current_figure
 """
-plt.ion()
-service.view()
-plt.title('Service')
-plt.ioff()
+#plt.ion()
+#service.view()
+#plt.title('Service')
+#plt.ioff()
 """
 .. image:: PLOT2RST.current_figure
 """
-plt.ion()
-tip.view()
-plt.title('Tip')
-plt.ioff()
+#plt.ion()
+#tip.view()
+#plt.title('Tip')
+#plt.ioff()
 """
 .. image:: PLOT2RST.current_figure
 
@@ -117,12 +117,12 @@ tipping.compute()
 """
 Once computed, we can view the result as well as visualize it.
 """
-plt.ion()
+#plt.ion()
 print(tipping.output['tip'])
-tip.view(sim=tipping)
-plt.title('Result')
-plt.show()
-plt.ioff()
+#tip.view(sim=tipping)
+#plt.title('Result')
+#plt.show()
+#plt.ioff()
 
 """
 .. image:: PLOT2RST.current_figure

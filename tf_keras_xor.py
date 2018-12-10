@@ -2,15 +2,17 @@
 #from keras.layers.core import Dense, Dropout, Activation
 #from keras.optimizers import SGD
 import tensorflow as tf
-import numpy as np 
+import numpy as np
 # Define the input and the expected output
-X = np.array([[0,0],[0,1],[1,0],[1,1]])
-y = np.array([[0],[1],[1],[0]])
+X = np.array([[0,0,0,0],[0,0,0,1],[0,0,1,0],[0,0,1,1],[0,1,0,0],[0,1,0,1],[0,1,1,0],[0,1,1,1],[1,0,0,0],
+[1,0,0,1],[1,0,1,0],[1,0,1,1],[1,1,0,0],[1,1,0,1],[1,1,1,0],[1,1,1,1]])
+y = np.array([[1],[1],[1],[1],[1],[1],[1],[1],[1],[1],[1],[1],[0],[1],[1],[1]])
 # The Sequential model is a linear stack of layers.
 model = tf.keras.models.Sequential()
 # The model needs to know what input shape it should expect. For this reason, the first layer in a  Sequential model (and only the first, because following layers can do automatic shape inference) needs to receive information about its input shape.
-# Some 2D layers, such as Dense, support the specification of their input shape via the argument input_dim 
-model.add(tf.keras.layers.Dense(2,input_dim = 2,activation=tf.nn.relu))
+# Some 2D layers, such as Dense, support the specification of their input shape via the argument input_dim
+model.add(tf.keras.layers.Dense(4,input_dim = 4,activation=tf.nn.sigmoid))
+model.add(tf.keras.layers.Dense(5, activation = tf.nn.sigmoid))
 model.add(tf.keras.layers.Dense(1,activation=tf.nn.sigmoid))
 
 # Before training a model, you need to configure the learning process, which is done via the compile method

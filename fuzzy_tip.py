@@ -143,13 +143,13 @@ and the processing burden is minimal.
 """
 
 # We can simulate at higher resolution with full accuracy
-upsampled = np.linspace(0, 10, 10)
+upsampled = np.linspace(0, 26, 26)
 x, y = np.meshgrid(upsampled, upsampled)
 z = np.zeros_like(x)
 
 # Loop through the system 10*10 times to collect the control surface
-for i in range(10):
-    for j in range(10):
+for i in range(26):
+    for j in range(26):
         tipping.input['quality'] = x[i, j]
         tipping.input['service'] = y[i, j]
         tipping.compute()
@@ -162,9 +162,9 @@ ax = fig.add_subplot(111, projection='3d')
 surf = ax.plot_surface(x, y, z, rstride=1, cstride=1, cmap='viridis',
                        linewidth=0.4, antialiased=True)
 
-cset = ax.contourf(x, y, z, zdir='z', offset=-2.5, cmap='viridis', alpha=0.5)
-cset = ax.contourf(x, y, z, zdir='x', offset=13, cmap='viridis', alpha=0.5)
-cset = ax.contourf(x, y, z, zdir='y', offset=13, cmap='viridis', alpha=0.5)
+cset = ax.contourf(x, y, z, zdir='z', offset=6, cmap='viridis', alpha=0.5) #cset = ax.contourf(x, y, z, zdir='z', offset=-2.5, cmap='viridis', alpha=0.5)
+cset = ax.contourf(x, y, z, zdir='x', offset=18, cmap='viridis', alpha=0.5) #cset = ax.contourf(x, y, z, zdir='x', offset=13, cmap='viridis', alpha=0.5)
+cset = ax.contourf(x, y, z, zdir='y', offset=26 , cmap='viridis', alpha=0.5) #cset = ax.contourf(x, y, z, zdir='y', offset=13, cmap='viridis', alpha=0.5)
 
 ax.view_init(30, 200)
 plt.show()

@@ -23,9 +23,9 @@ quality['poor'] = fuzz.zmf(quality.universe, 6,17) #quality['poor'] = fuzz.zmf(q
 #quality['average'] = fuzz.gaussmf(quality.universe,5,1) CHANGED
 quality['good'] = fuzz.smf(quality.universe,8,18) #quality['good'] = fuzz.smf(quality.universe,5,10) CHANGED
 
-service['poor'] = fuzz.zmf(service.universe, 0,5)
-service['average'] = fuzz.gaussmf(service.universe,5,1)
-service['good'] = fuzz.smf(service.universe,5,10)
+service['poor'] = fuzz.zmf(service.universe, 8,18) #service['poor'] = fuzz.zmf(service.universe, 0,5) CHANGED
+#service['average'] = fuzz.gaussmf(service.universe,5,1) CHANGED
+service['good'] = fuzz.smf(service.universe,8,18) #service['good'] = fuzz.smf(service.universe,5,10) CHANGED
 
 tip['low'] = fuzz.trimf(tip.universe, [0, 0, 13])
 tip['medium'] = fuzz.trimf(tip.universe, [0, 13, 25])

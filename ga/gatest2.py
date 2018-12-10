@@ -3,7 +3,7 @@ import GA2
 from testsq import testsq
 
 # Number of the weights we are looking to optimize.
-num_weights = 1
+num_weights = 3
 
 sol_per_pop = 20
 num_parents_mating = 2
@@ -11,10 +11,10 @@ num_parents_mating = 2
 # Defining the population size.
 pop_size = (sol_per_pop,num_weights) # The population will have sol_per_pop chromosome where each chromosome has num_weights genes.
 #Creating the initial population.
-new_population = numpy.random.uniform(low=-10.0, high=10.0, size=pop_size)
+new_population = numpy.random.uniform(low=-100, high=100, size=pop_size)
 #print(new_population)
 
-num_generations = 50
+num_generations = 500
 for generation in range(num_generations):
 	print("Generation : ", generation)
 	# Measing the fitness of each chromosome in the population.

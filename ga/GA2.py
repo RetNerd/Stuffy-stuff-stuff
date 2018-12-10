@@ -39,8 +39,10 @@ def mutation(offspring_crossover):
 	# Mutation changes a single gene in each offspring randomly.
 	for idx in range(offspring_crossover.shape[0]):
 		# The random value to be added to the gene.
-		random_value = numpy.random.uniform(-1.0, 1.0, 1)
+		random_value = numpy.random.uniform(0.8, 1.2, 1)
+		if(random_value < 0.83):
+			random_value*= -1
 		random_pos = random.randint(0, offspring_crossover.shape[1]-1)
-		offspring_crossover[idx, random_pos] = offspring_crossover[idx, random_pos] + random_value
+		offspring_crossover[idx, random_pos] = offspring_crossover[idx, random_pos] * random_value
 	return offspring_crossover
 

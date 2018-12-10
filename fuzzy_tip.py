@@ -27,9 +27,9 @@ service['poor'] = fuzz.zmf(service.universe, 8,18) #service['poor'] = fuzz.zmf(s
 #service['average'] = fuzz.gaussmf(service.universe,5,1) CHANGED
 service['good'] = fuzz.smf(service.universe,8,18) #service['good'] = fuzz.smf(service.universe,5,10) CHANGED
 
-tip['low'] = fuzz.trimf(tip.universe, [0, 0, 13])
-tip['medium'] = fuzz.trimf(tip.universe, [0, 13, 25])
-tip['high'] = fuzz.trimf(tip.universe, [13, 25, 25])
+tip['low'] = fuzz.trimf(tip.universe, [-5, 3, 11])  #tip['low'] = fuzz.trimf(tip.universe, [0, 0, 13]) CHANGED
+tip['medium'] = fuzz.trimf(tip.universe, [3, 11, 19]) #tip['medium'] = fuzz.trimf(tip.universe, [0, 13, 25]) CHANGED
+tip['high'] = fuzz.trimf(tip.universe, [11, 19, 26]) #tip['high'] = fuzz.trimf(tip.universe, [13, 25, 25]) CHANGED
 
 """
 To help understand what the membership looks like, use the ``view`` methods.

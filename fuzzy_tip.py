@@ -23,9 +23,9 @@ quality['poor'] = fuzz.zmf(quality.universe, 6,17) #quality['poor'] = fuzz.zmf(q
 #quality['average'] = fuzz.gaussmf(quality.universe,5,1) CHANGED
 quality['good'] = fuzz.smf(quality.universe,8,18) #quality['good'] = fuzz.smf(quality.universe,5,10) CHANGED
 
-service['poor'] = fuzz.zmf(service.universe, 8,18) #service['poor'] = fuzz.zmf(service.universe, 0,5) CHANGED
+service['fast'] = fuzz.zmf(service.universe, 8,18) #service['poor'] = fuzz.zmf(service.universe, 0,5) CHANGED
 #service['average'] = fuzz.gaussmf(service.universe,5,1) CHANGED
-service['good'] = fuzz.smf(service.universe,8,18) #service['good'] = fuzz.smf(service.universe,5,10) CHANGED
+service['slow'] = fuzz.smf(service.universe,8,18) #service['good'] = fuzz.smf(service.universe,5,10) CHANGED
 
 tip['low'] = fuzz.trimf(tip.universe, [-5, 3, 11])  #tip['low'] = fuzz.trimf(tip.universe, [0, 0, 13]) CHANGED
 tip['medium'] = fuzz.trimf(tip.universe, [3, 11, 19]) #tip['medium'] = fuzz.trimf(tip.universe, [0, 13, 25]) CHANGED
@@ -74,9 +74,10 @@ imprecise rules into a defined, actionable tip is a challenge. This is the
 kind of task at which fuzzy logic excels.
 """
 
-rule1 = ctrl.Rule(quality['poor'] | service['poor'], tip['low'])
-rule2 = ctrl.Rule(service['average'], tip['medium'])
-rule3 = ctrl.Rule(service['good'] | quality['good'], tip['high'])
+rule1 = ctrl.Rule(quality['poor'] & service['fast'], tip['medium']) #rule1 = ctrl.Rule(quality['poor'] | service['poor'], tip['low']) CHANGED
+rule2 = ctrl.Rule(quality['poor'] & service['slow'], tip['low'])#rule2 = ctrl.Rule(service['average'], tip['medium']) CHANGED
+rule3 = ctrl.Rule(quality['good'] & service['fast'], tip['high'])#rule3 = ctrl.Rule(service['good'] | quality['good'], tip['high']) CHANGED
+rule4 = ctrl.Rule(quality['good'] & service['slow'], tip['medium']) #NEW
 
 """
 .. image:: PLOT2RST.current_figure
@@ -88,7 +89,7 @@ Now that we have our rules defined, we can simply create a control system
 via:
 """
 
-tipping_ctrl = ctrl.ControlSystem([rule1, rule2, rule3])
+tipping_ctrl = ctrl.ControlSystem([rule1, rule2, rule3, rule4]) #tipping_ctrl = ctrl.ControlSystem([rule1, rule2, rule3]) CHANGED
 
 """
 In order to simulate this control system, we will create a

@@ -1,0 +1,40 @@
+[System]
+Name='1.feladat_matlep'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='minoseg'
+Range=[6 17]
+NumMFs=2
+MF1='alacsony':'zmf',[6 17]
+MF2='magas':'smf',[6 16]
+
+[Input2]
+Name='varakozas'
+Range=[8 18]
+NumMFs=2
+MF1='alacsony':'zmf',[8 18]
+MF2='magas':'smf',[9 17]
+
+[Output1]
+Name='borravalo'
+Range=[-5 26]
+NumMFs=3
+MF1='alacsony':'trimf',[-5 3 11]
+MF2='kozepes':'trimf',[3 11 19]
+MF3='magas':'trimf',[11 19 26]
+
+[Rules]
+1 1, 2 (1) : 1
+1 2, 1 (1) : 1
+2 1, 3 (1) : 1
+2 2, 2 (1) : 1

@@ -30,7 +30,7 @@ model.add(tf.keras.layers.Dense(1, activation = tf.nn.sigmoid))
 # For any classification problem you will want to set this to metrics=['accuracy'].
 model.compile(optimizer='sgd', loss='binary_crossentropy', metrics=['accuracy'])
 # Keras models are trained on Numpy arrays of input data and labels. For training a model, you will typically use the fit function.
-model.fit(IN, OUT, batch_size=4, epochs=100)
+model.fit(IN, OUT, batch_size=4, epochs=500)
 model.save('network.hdf5')
 print('Rounded prediction:')
 print(np.round(model.predict_proba(X),2))

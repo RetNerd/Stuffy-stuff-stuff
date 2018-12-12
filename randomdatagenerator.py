@@ -6,11 +6,10 @@ Created on Tue Dec 11 22:06:30 2018
 @author: rnerd
 """
 import numpy as np
-
 #Takes 3 input, X and y are the logical functions input and output, N the number of examples generated from each row of the truthtable
 def generatedata(X, y, N):
-	outX = X[0]
-	outY = y[0]
+	outX = np.empty(4, dtype = int)
+	outY = np.empty(1, dtype = int)
 	for i, x in enumerate(X):
 		outX=np.vstack((outX, x))
 		outY=np.vstack((outY, y[i]))

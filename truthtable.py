@@ -28,4 +28,3 @@ def truthtable():
                     Y = np.vstack((Y , truth(formula)))
                     X = np.vstack((X, [truth(a), truth(b), truth(c), truth(d)]))
     return [X[1:], Y[1:]]
-print(truthtable())

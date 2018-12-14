@@ -16,14 +16,14 @@ Name='minoseg'
 Range=[6 17]
 NumMFs=2
 MF1='alacsony':'zmf',[6 17]
-MF2='magas':'smf',[6 16]
+MF2='magas':'smf',[6 17]
 
 [Input2]
 Name='varakozas'
 Range=[8 18]
 NumMFs=2
 MF1='alacsony':'zmf',[8 18]
-MF2='magas':'smf',[9 17]
+MF2='magas':'smf',[8 18]
 
 [Output1]
 Name='borravalo'
